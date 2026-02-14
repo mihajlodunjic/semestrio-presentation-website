@@ -5,11 +5,11 @@ import { Container } from '../components/ui/Container';
 import { SectionHeading } from '../components/ui/SectionHeading';
 
 const bullets = [
-  'Sezona (licenca) je period rada skole (npr. 2025/26).',
-  'Ucenik ima trajni nalog, ali svake godine pravi novi upis (enrollment).',
-  'Pristup sadrzaju postoji samo uz ACTIVE upis i efektivnu licencu.',
-  'Aktivacija upisa je moguca samo kad je sezona aktivna i u okviru limita.',
-  'Pravila ostaju konzistentna i kada skola vodi vise programa kroz godinu.',
+  'Sezona (licenca) je period rada škole (npr. 2025/26).',
+  'Učenik ima trajni nalog, ali svake godine pravi novi upis (enrollment).',
+  'Pristup sadržaju postoji samo uz ACTIVE upis i efektivnu licencu.',
+  'Aktivacija upisa je moguća samo kad je sezona aktivna i u okviru limita.',
+  'Pravila ostaju konzistentna i kada škola vodi više programa kroz godinu.',
 ];
 
 export function SeasonModel() {
@@ -43,7 +43,7 @@ export function SeasonModel() {
               <p className="text-xs font-semibold uppercase tracking-[0.1em] text-brand-700">Info panel</p>
               <h3 className="mt-3 text-xl font-semibold">Nalog != Upis</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                Nalog je trajan identitet korisnika. Upis je sezonski zapis koji odredjuje pravo pristupa kursu i materijalima.
+                Nalog je trajan identitet korisnika. Upis je sezonski zapis koji određuje pravo pristupa kursu i materijalima.
               </p>
             </Card>
           </Reveal>

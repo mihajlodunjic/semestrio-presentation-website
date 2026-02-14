@@ -16,8 +16,8 @@ export function FAQ() {
         <Reveal>
           <SectionHeading
             eyebrow="FAQ"
-            title="Najcesca pitanja skola i edukativnih centara"
-            subtitle="Kratki odgovori na kljucne teme pre nego sto zakazemo demo."
+            title="Najčešća pitanja škola i edukativnih centara"
+            subtitle="Kratki odgovori na ključne teme pre nego što zakažemo demo."
           />
         </Reveal>
 

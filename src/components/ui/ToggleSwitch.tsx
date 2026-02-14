@@ -18,12 +18,12 @@ export function ToggleSwitch({ checked, onChange, leftLabel, rightLabel, ariaLab
         aria-checked={checked}
         aria-label={ariaLabel}
         onClick={() => onChange(!checked)}
-        className="relative h-7 w-12 rounded-full bg-brand-600 transition-colors"
+        className="relative h-7 w-12 overflow-hidden rounded-full bg-brand-600 transition-colors"
       >
         <span
           className={cn(
-            'absolute top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform',
-            checked ? 'translate-x-5' : 'translate-x-0.5',
+            'absolute left-0.5 top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform',
+            checked ? 'translate-x-5' : 'translate-x-0',
           )}
         />
       </button>

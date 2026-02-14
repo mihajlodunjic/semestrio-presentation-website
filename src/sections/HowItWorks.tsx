@@ -4,9 +4,9 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { cn } from '../lib/cn';
 
 const steps = [
-  'Skola dobija svoj prostor + schoolCode',
+  'Škola dobija svoj prostor + schoolCode',
   'Admin kreira kurseve -> grupe -> lekcije -> materijale',
-  'Ucenik se registruje schoolCode-om i prijavi kurs (upis je PENDING)',
+  'Učenik se registruje schoolCode-om i prijavi kurs (upis je PENDING)',
   'Admin potvrdi uplatu -> upis postaje ACTIVE (u aktivnoj sezoni i do limita)',
 ];
 
@@ -17,8 +17,8 @@ export function HowItWorks() {
         <Reveal>
           <SectionHeading
             eyebrow="Kako radi"
-            title="Jasan tok od registracije do pristupa sadrzaju"
-            subtitle="Model je dizajniran da admin tim ima potpunu kontrolu, a ucenik jednostavno iskustvo."
+            title="Jasan tok od registracije do pristupa sadržaju"
+            subtitle="Model je dizajniran da admin tim ima potpunu kontrolu, a učenik jednostavno iskustvo."
           />
         </Reveal>
 

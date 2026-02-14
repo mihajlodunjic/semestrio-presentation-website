@@ -1,4 +1,4 @@
-import { PRICING_BY_CYCLE, type BillingCycle, type PricingPlan } from '../data/pricing';
+﻿import { PRICING_BY_CYCLE, type BillingCycle, type PricingPlan } from '../data/pricing';
 
 interface PriceResult {
   perStudentTotal: number | null;
@@ -46,5 +46,5 @@ export function calcTotal(students: number, plan: PricingPlan): PriceResult {
 export function formatEUR(value: number): string {
   const rounded = Math.round(value);
   const formatted = new Intl.NumberFormat('de-DE').format(rounded);
-  return `${formatted}€`;
+  return `${formatted}\u20AC`;
 }

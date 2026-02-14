@@ -11,11 +11,11 @@ interface LegalModalProps {
 const MODAL_COPY = {
   privacy: {
     title: 'Politika privatnosti',
-    body: 'Stranica je u pripremi. Ovaj placeholder ce biti zamenjen punim dokumentom uskoro.',
+    body: 'Stranica je u pripremi. Ovaj placeholder će biti zamenjen punim dokumentom uskoro.',
   },
   terms: {
-    title: 'Uslovi koriscenja',
-    body: 'Stranica je u pripremi. Ovaj placeholder ce biti zamenjen punim dokumentom uskoro.',
+    title: 'Uslovi korišćenja',
+    body: 'Stranica je u pripremi. Ovaj placeholder će biti zamenjen punim dokumentom uskoro.',
   },
 };
 

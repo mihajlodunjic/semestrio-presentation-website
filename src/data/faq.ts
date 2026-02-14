@@ -1,4 +1,4 @@
-export interface FAQItem {
+﻿export interface FAQItem {
   id: string;
   question: string;
   answer: string;
@@ -7,18 +7,18 @@ export interface FAQItem {
 export const FAQ_ITEMS: FAQItem[] = [
   {
     id: 'faq-1',
-    question: 'Da li ucenik pravi novi nalog svake godine?',
+    question: 'Da li učenik pravi novi nalog svake godine?',
     answer: 'Ne, nalog je trajan, upis je sezonski.',
   },
   {
     id: 'faq-2',
-    question: 'Sta ako sezona jos nije krenula?',
-    answer: 'Upis moze biti PENDING, a aktivira se kada licenca postane efektivna.',
+    question: 'Šta ako sezona još nije krenula?',
+    answer: 'Upis može biti PENDING, a aktivira se kada licenca postane efektivna.',
   },
   {
     id: 'faq-3',
-    question: 'Da li postoji online placanje u platformi?',
-    answer: 'Ne u MVP-u, admin rucno potvrdjuje uplatu.',
+    question: 'Da li postoji online plaćanje u platformi?',
+    answer: 'Ne u MVP-u, admin ručno potvrđuje uplatu.',
   },
   {
     id: 'faq-4',
@@ -27,42 +27,42 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     id: 'faq-5',
-    question: 'Da li skola moze imati vise admina?',
-    answer: 'Da, platforma podrzava vise SCHOOL_ADMIN korisnika po skoli.',
+    question: 'Da li škola može imati više admina?',
+    answer: 'Da, platforma podržava više SCHOOL_ADMIN korisnika po školi.',
   },
   {
     id: 'faq-6',
-    question: 'Kako radi limit ucenika?',
-    answer: 'Broji se distinct ucenik, bez dupliranja po kursevima.',
+    question: 'Kako radi limit učenika?',
+    answer: 'Broji se distinct učenik, bez dupliranja po kursevima.',
   },
   {
     id: 'faq-7',
-    question: 'Da li podrzava Zoom integraciju?',
+    question: 'Da li podržava Zoom integraciju?',
     answer: 'Nema direktne integracije, ali se link dodaje u lekciju.',
   },
   {
     id: 'faq-8',
-    question: 'Da li su podaci izolovani po skoli?',
+    question: 'Da li su podaci izolovani po školi?',
     answer: 'Da, multi-tenant izolacija se vodi po schoolId.',
   },
   {
     id: 'faq-9',
-    question: 'Da li mogu vise sezona?',
-    answer: 'Da, kroz vreme moze vise sezona; u trenutku je najvise jedna efektivna aktivna.',
+    question: 'Da li mogu više sezona?',
+    answer: 'Da, kroz vreme može više sezona; u trenutku je najviše jedna efektivna aktivna.',
   },
   {
     id: 'faq-10',
-    question: 'Da li ce postojati uloga predavaca?',
+    question: 'Da li će postojati uloga predavača?',
     answer: 'Planirano je kao opcija u narednim fazama.',
   },
   {
     id: 'faq-11',
-    question: 'Da li mogu da izvozim izvestaje?',
-    answer: 'U MVP-u su prioritet upisi i pristup, a napredni izvestaji dolaze kasnije.',
+    question: 'Da li mogu da izvozim izveštaje?',
+    answer: 'U MVP-u su prioritet upisi i pristup, a napredni izveštaji dolaze kasnije.',
   },
   {
     id: 'faq-12',
-    question: 'Kako izgleda onboarding skole?',
-    answer: 'Skola dobija svoj tenant i schoolCode, a zatim admin odmah unosi kurseve i grupe.',
+    question: 'Kako izgleda onboarding škole?',
+    answer: 'Škola dobija svoj tenant i schoolCode, a zatim admin odmah unosi kurseve i grupe.',
   },
 ];

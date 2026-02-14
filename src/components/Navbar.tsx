@@ -8,7 +8,7 @@ import { cn } from '../lib/cn';
 import type { ThemeMode } from '../lib/theme';
 
 const NAV_ITEMS = [
-  { id: 'home', label: 'Pocetna' },
+  { id: 'home', label: 'Početna' },
   { id: 'how', label: 'Kako radi' },
   { id: 'features', label: 'Funkcionalnosti' },
   { id: 'roles', label: 'Za koga' },
@@ -103,7 +103,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
 
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-          <Button onClick={handleDemo}>Zakazi demo</Button>
+          <Button onClick={handleDemo}>Zakaži demo</Button>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -136,7 +136,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
             ))}
           </nav>
           <Button className="mt-3 w-full" onClick={handleDemo}>
-            Zakazi demo
+            Zakaži demo
           </Button>
         </div>
       </Container>

@@ -26,16 +26,16 @@ export function Pricing() {
 
   const validationError = useMemo(() => {
     if (studentsInput.trim().length === 0) {
-      return 'Unesite broj ucenika.';
+      return 'Unesite broj učenika.';
     }
     if (!Number.isFinite(parsedStudents)) {
-      return 'Broj ucenika mora biti broj.';
+      return 'Broj učenika mora biti broj.';
     }
     if (parsedStudents <= 0) {
-      return 'Broj ucenika mora biti veci od 0.';
+      return 'Broj učenika mora biti veći od 0.';
     }
     if (parsedStudents > 2000) {
-      return 'Maksimalno podrzano je 2000 ucenika za kalkulator.';
+      return 'Maksimalno podržano je 2000 učenika za kalkulator.';
     }
     return null;
   }, [parsedStudents, studentsInput]);
@@ -57,8 +57,8 @@ export function Pricing() {
         <Reveal>
           <SectionHeading
             eyebrow="Cenovnik"
-            title="Transparentno formiranje cene po broju ucenika"
-            subtitle="Izaberite trajanje licence i odmah procenite trosak po formuli koja je jasna i predvidiva."
+            title="Transparentno formiranje cene po broju učenika"
+            subtitle="Izaberite trajanje licence i odmah procenite trošak po formuli koja je jasna i predvidiva."
           />
         </Reveal>
 
@@ -68,10 +68,10 @@ export function Pricing() {
               checked={isAnnual}
               onChange={(checked) => setCycle(checked ? 'ANNUAL_12M' : 'SEASONAL_5M')}
               leftLabel="Sezonska licenca (5 meseci)"
-              rightLabel="Godisnja licenca (12 meseci)"
+              rightLabel="Godišnja licenca (12 meseci)"
               ariaLabel="Promeni tip licence"
             />
-            <p className="text-sm text-muted">Ukupno = max(minimalna cena paketa, broj_ucenika x cena_po_uceniku).</p>
+            <p className="text-sm text-muted">Ukupno = max(minimalna cena paketa, broj_učenika × cena_po_učeniku).</p>
           </div>
         </Reveal>
 
@@ -80,8 +80,8 @@ export function Pricing() {
             const cardPrice = plan.custom
               ? 'Po dogovoru'
               : isAnnual
-                ? `${formatEUR(plan.perStudent ?? 0)} po uceniku godisnje`
-                : `${formatEUR(plan.perStudent ?? 0)} po uceniku / 5 meseci`;
+                ? `${formatEUR(plan.perStudent ?? 0)} po učeniku godišnje`
+                : `${formatEUR(plan.perStudent ?? 0)} po učeniku / 5 meseci`;
 
             return (
               <Reveal key={plan.id} delay={index * 0.04}>
@@ -100,7 +100,7 @@ export function Pricing() {
                     ) : null}
                   </div>
                   <p className="mt-3 text-sm text-muted">
-                    {plan.maxStudents === null ? 'Preko 300 ucenika' : `Do ${plan.maxStudents} ucenika`}
+                    {plan.maxStudents === null ? 'Preko 300 učenika' : `Do ${plan.maxStudents} učenika`}
                   </p>
                   <p className="mt-4 text-sm font-semibold text-primary">{cardPrice}</p>
                   <p className="mt-2 text-sm text-muted">
@@ -112,7 +112,7 @@ export function Pricing() {
                     variant={plan.id === 'ENTERPRISE' ? 'secondary' : 'primary'}
                     onClick={scrollToContact}
                   >
-                    {plan.id === 'ENTERPRISE' ? 'Zatrazi ponudu' : 'Zakazi demo'}
+                    {plan.id === 'ENTERPRISE' ? 'Zatraži ponudu' : 'Zakaži demo'}
                   </Button>
                 </Card>
               </Reveal>
@@ -132,7 +132,7 @@ export function Pricing() {
                   max={2000}
                   step={1}
                   inputMode="numeric"
-                  label="Broj ucenika"
+                  label="Broj učenika"
                   value={studentsInput}
                   onChange={(event) => setStudentsInput(event.target.value)}
                   aria-invalid={validationError ? 'true' : 'false'}
@@ -141,16 +141,16 @@ export function Pricing() {
               </div>
 
               <div className="rounded-2xl border border-surface bg-soft p-5 lg:col-span-7">
-                <p className="text-sm text-muted">Preporuceni paket</p>
+                <p className="text-sm text-muted">Preporučeni paket</p>
                 <p className="mt-1 text-2xl font-semibold">{recommendedPlan ? recommendedPlan.name : '-'}</p>
 
                 <div className="mt-4 space-y-2 text-sm text-muted">
                   {!recommendedPlan || !breakdown ? (
-                    <p>Unesite validan broj ucenika za izracunavanje.</p>
+                    <p>Unesite validan broj učenika za izračunavanje.</p>
                   ) : breakdown.isCustom ? (
                     <>
-                      <p>Izracunata cena: Po dogovoru</p>
-                      <p>Za ENTERPRISE paket cena se definise prema potrebama skole.</p>
+                      <p>Izračunata cena: Po dogovoru</p>
+                      <p>Za ENTERPRISE paket cena se definiše prema potrebama škole.</p>
                     </>
                   ) : (
                     <>

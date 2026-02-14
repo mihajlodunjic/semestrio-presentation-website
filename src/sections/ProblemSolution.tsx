@@ -5,9 +5,9 @@ import { Container } from '../components/ui/Container';
 import { SectionHeading } from '../components/ui/SectionHeading';
 
 const problems = [
-  'Upisi i uplate se prate rucno',
+  'Upisi i uplate se prate ručno',
   'Nejasno ko ima pravo na koje materijale',
-  'Sezone se mesaju, ucenici traze pristup od prosle godine',
+  'Sezone se mešaju, učenici traže pristup od prošle godine',
   'Materijali su rasuti po linkovima i folderima',
 ];
 
@@ -15,7 +15,7 @@ const solutions = [
   'Jasan tok upisa: PENDING -> ACTIVE',
   'Pristup samo uz aktivan upis i efektivnu licencu',
   'Materijali organizovani po lekcijama',
-  'Skola kao tenant: izolacija podataka',
+  'Škola kao tenant: izolacija podataka',
 ];
 
 export function ProblemSolution() {
@@ -24,9 +24,9 @@ export function ProblemSolution() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Problem i resenje"
+            eyebrow="Problem i rešenje"
             title="Od rasutih procesa do jasne operativne rutine"
-            subtitle="Semestrio uvodi red u upise, pristup sadrzaju i sezonska pravila rada skola i edukativnih centara."
+            subtitle="Semestrio uvodi red u upise, pristup sadržaju i sezonska pravila rada škola i edukativnih centara."
           />
         </Reveal>
 
@@ -47,7 +47,7 @@ export function ProblemSolution() {
 
           <Reveal delay={0.08}>
             <Card className="h-full p-6 sm:p-7">
-              <h3 className="text-xl font-semibold">Semestrio resava</h3>
+              <h3 className="text-xl font-semibold">Semestrio rešava</h3>
               <ul className="mt-6 space-y-4 text-sm text-muted sm:text-base">
                 {solutions.map((item) => (
                   <li key={item} className="flex items-start gap-3">

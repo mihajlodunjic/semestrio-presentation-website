@@ -16,7 +16,7 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 const features = [
   {
     title: 'Kursevi, grupe i lekcije',
-    description: 'Struktura koja prati realan rad skole i raspored grupa.',
+    description: 'Struktura koja prati realan rad škole i raspored grupa.',
     icon: GraduationCap,
   },
   {
@@ -26,7 +26,7 @@ const features = [
   },
   {
     title: 'Draft / Published lekcije',
-    description: 'Objavi tek kada je spremno, bez izlaska nepotpunog sadrzaja.',
+    description: 'Objavi tek kada je spremno, bez izlaska nepotpunog sadržaja.',
     icon: Signal,
   },
   {
@@ -36,12 +36,12 @@ const features = [
   },
   {
     title: 'Upisi sa statusima',
-    description: 'Jasni statusi PENDING/ACTIVE olaksavaju administraciju.',
+    description: 'Jasni statusi PENDING/ACTIVE olakšavaju administraciju.',
     icon: Users,
   },
   {
     title: 'Sezonske licence',
-    description: 'ACTIVE/SCHEDULED/PAUSED statusi drze poslovna pravila pod kontrolom.',
+    description: 'ACTIVE/SCHEDULED/PAUSED statusi drže poslovna pravila pod kontrolom.',
     icon: CalendarClock,
   },
   {
@@ -50,8 +50,8 @@ const features = [
     icon: Lock,
   },
   {
-    title: 'Limit ucenika po licenci',
-    description: 'Distinct brojanje ucenika bez dupliranja po predmetima.',
+    title: 'Limit učenika po licenci',
+    description: 'Distinct brojanje učenika bez dupliranja po predmetima.',
     icon: PlayCircle,
   },
 ];
@@ -64,7 +64,7 @@ export function Features() {
           <SectionHeading
             eyebrow="Funkcionalnosti"
             title="Core funkcije fokusirane na operativnu stabilnost"
-            subtitle="MVP obuhvata najvaznije procese koji najvise opterecuju administraciju skole."
+            subtitle="MVP obuhvata najvažnije procese koji najviše opterećuju administraciju škole."
             align="center"
             className="mx-auto max-w-3xl"
           />
@@ -85,7 +85,7 @@ export function Features() {
         <Reveal delay={0.12}>
           <Card className="mt-8 border-brand-gray-200 bg-soft p-5 sm:p-6">
             <p className="text-sm text-muted sm:text-base">
-              MVP je fokusiran na jednostavnost: bez placanja u aplikaciji, bez notifikacija i bez chat-a - stabilno i jasno.
+              MVP je fokusiran na jednostavnost: bez plaćanja u aplikaciji, bez notifikacija i bez chat-a - stabilno i jasno.
             </p>
           </Card>
         </Reveal>

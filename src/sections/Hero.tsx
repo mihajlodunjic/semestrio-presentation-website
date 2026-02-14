@@ -10,9 +10,9 @@ function scrollToId(id: string): void {
 }
 
 const benefits = [
-  { icon: Layers, text: 'Brze upravljanje upisima' },
-  { icon: ShieldCheck, text: 'Kontrolisan pristup sadrzaju' },
-  { icon: CheckCircle2, text: 'Sezonalnost bez konfuzije za ucenike' },
+  { icon: Layers, text: 'Brže upravljanje upisima' },
+  { icon: ShieldCheck, text: 'Kontrolisan pristup sadržaju' },
+  { icon: CheckCircle2, text: 'Sezonalnost bez konfuzije za učenike' },
 ];
 
 export function Hero() {
@@ -29,11 +29,11 @@ export function Hero() {
               Organizuj nastavu, upise i pristup materijalima - bez haosa.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-              Semestrio je multi-tenant SaaS za skole i edukativne centre: kursevi, grupe, lekcije, video/PDF materijali i sezonske licence sa jasnim pravilima pristupa.
+              Semestrio je multi-tenant SaaS za škole i edukativne centre: kursevi, grupe, lekcije, video/PDF materijali i sezonske licence sa jasnim pravilima pristupa.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button onClick={() => scrollToId('contact')}>Zakazi demo</Button>
+              <Button onClick={() => scrollToId('contact')}>Zakaži demo</Button>
               <Button variant="secondary" onClick={() => scrollToId('pricing')}>
                 Pogledaj cene
               </Button>

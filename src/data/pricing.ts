@@ -1,4 +1,4 @@
-export type BillingCycle = 'SEASONAL_5M' | 'ANNUAL_12M';
+﻿export type BillingCycle = 'SEASONAL_5M' | 'ANNUAL_12M';
 export type PlanId = 'START' | 'GROWTH' | 'PRO' | 'ENTERPRISE';
 
 export interface PricingPlan {
@@ -19,7 +19,7 @@ export const PRICING_BY_CYCLE: Record<BillingCycle, PricingPlan[]> = {
       maxStudents: 50,
       perStudent: 15,
       minPrice: 600,
-      exampleText: '50 ucenika -> 750€',
+      exampleText: '50 učenika -> 750€',
       custom: false,
     },
     {
@@ -28,7 +28,7 @@ export const PRICING_BY_CYCLE: Record<BillingCycle, PricingPlan[]> = {
       maxStudents: 150,
       perStudent: 13,
       minPrice: 1200,
-      exampleText: '150 ucenika -> 1.950€',
+      exampleText: '150 učenika -> 1.950€',
       custom: false,
     },
     {
@@ -37,7 +37,7 @@ export const PRICING_BY_CYCLE: Record<BillingCycle, PricingPlan[]> = {
       maxStudents: 300,
       perStudent: 11,
       minPrice: 2200,
-      exampleText: '300 ucenika -> 3.300€',
+      exampleText: '300 učenika -> 3.300€',
       custom: false,
     },
     {
@@ -46,7 +46,7 @@ export const PRICING_BY_CYCLE: Record<BillingCycle, PricingPlan[]> = {
       maxStudents: null,
       perStudent: null,
       minPrice: null,
-      exampleText: '>300 ucenika -> po dogovoru',
+      exampleText: '>300 učenika -> po dogovoru',
       custom: true,
     },
   ],
@@ -57,7 +57,7 @@ export const PRICING_BY_CYCLE: Record<BillingCycle, PricingPlan[]> = {
       maxStudents: 50,
       perStudent: 25,
       minPrice: 1000,
-      exampleText: '50 ucenika -> 1.250€',
+      exampleText: '50 učenika -> 1.250€',
       custom: false,
     },
     {
@@ -66,7 +66,7 @@ export const PRICING_BY_CYCLE: Record<BillingCycle, PricingPlan[]> = {
       maxStudents: 150,
       perStudent: 22,
       minPrice: 2200,
-      exampleText: '150 ucenika -> 3.300€',
+      exampleText: '150 učenika -> 3.300€',
       custom: false,
     },
     {
@@ -75,7 +75,7 @@ export const PRICING_BY_CYCLE: Record<BillingCycle, PricingPlan[]> = {
       maxStudents: 300,
       perStudent: 20,
       minPrice: 4500,
-      exampleText: '300 ucenika -> 6.000€',
+      exampleText: '300 učenika -> 6.000€',
       custom: false,
     },
     {
@@ -84,7 +84,7 @@ export const PRICING_BY_CYCLE: Record<BillingCycle, PricingPlan[]> = {
       maxStudents: null,
       perStudent: null,
       minPrice: null,
-      exampleText: '>300 ucenika -> po dogovoru',
+      exampleText: '>300 učenika -> po dogovoru',
       custom: true,
     },
   ],

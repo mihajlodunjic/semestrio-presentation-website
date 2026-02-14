@@ -1,4 +1,4 @@
-import { BrandLogo } from '../components/BrandLogo';
+﻿import { BrandLogo } from '../components/BrandLogo';
 import { Container } from '../components/ui/Container';
 
 interface FooterProps {
@@ -6,7 +6,7 @@ interface FooterProps {
 }
 
 const footerLinks = [
-  { href: '#home', label: 'Pocetna' },
+  { href: '#home', label: 'Početna' },
   { href: '#how', label: 'Kako radi' },
   { href: '#features', label: 'Funkcionalnosti' },
   { href: '#roles', label: 'Za koga' },
@@ -23,7 +23,7 @@ export function Footer({ onOpenLegal }: FooterProps) {
           <div className="lg:col-span-5">
             <BrandLogo />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
-              Semestrio je B2B SaaS platforma za organizaciju nastave, upisa i kontrole pristupa u skolama i edukativnim centrima.
+              Semestrio je B2B SaaS platforma za organizaciju nastave, upisa i kontrole pristupa u školama i edukativnim centrima.
             </p>
           </div>
 
@@ -55,13 +55,13 @@ export function Footer({ onOpenLegal }: FooterProps) {
                 className="text-left transition-colors hover:text-primary hover:underline hover:decoration-brand-500"
                 onClick={() => onOpenLegal('terms')}
               >
-                Uslovi koriscenja
+                Uslovi korišćenja
               </button>
             </div>
           </div>
         </div>
 
-        <p className="mt-10 text-xs text-muted">© {new Date().getFullYear()} Semestrio. Sva prava zadrzana.</p>
+        <p className="mt-10 text-xs text-muted">© {new Date().getFullYear()} Semestrio. Sva prava zadržana.</p>
       </Container>
     </footer>
   );

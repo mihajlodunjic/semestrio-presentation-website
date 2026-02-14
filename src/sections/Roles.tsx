@@ -9,7 +9,7 @@ const roleCards = [
   {
     title: 'SUPER_ADMIN',
     badge: 'Admin',
-    subtitle: 'Upravlja skolama i licencama, vidi sve.',
+    subtitle: 'Upravlja školama i licencama, vidi sve.',
     rights: ['Upravljanje tenantima', 'Pregled svih licenci i sezona', 'Globalna kontrola pristupa'],
   },
   {
@@ -21,7 +21,7 @@ const roleCards = [
   {
     title: 'STUDENT',
     badge: 'Student',
-    subtitle: 'Vidi svoje upise i sadrzaj samo kad ima pravo pristupa.',
+    subtitle: 'Vidi svoje upise i sadržaj samo kad ima pravo pristupa.',
     rights: ['Pregled aktivnih upisa', 'Pristup lekcijama po pravilima', 'Jasan status svakog kursa'],
   },
 ];
