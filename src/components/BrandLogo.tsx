@@ -19,7 +19,7 @@ export function BrandLogo({ className, imageClassName, textClassName, showText =
     <div className={cn('inline-flex items-center gap-2', className)}>
       {!errored ? (
         <img
-          src="/brand/logo.png"
+          src="/logo.png"
           alt="Semestrio logo"
           className={cn('h-8 w-8 rounded-md object-contain', imageClassName)}
           onError={() => setErrored(true)}
