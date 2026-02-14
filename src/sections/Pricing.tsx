@@ -97,24 +97,24 @@ export function Pricing() {
                     plan.id === 'ENTERPRISE' ? 'border-brand-500' : 'border-surface',
                   )}
                 >
-                  <h3 className="text-3xl font-bold tracking-tight">{plan.name}</h3>
-                  <p className="mt-3 text-2xl text-muted">
+                  <h3 className="text-2xl font-bold tracking-tight">{plan.name}</h3>
+                  <p className="mt-3 text-xl text-muted">
                     {plan.maxStudents === null ? '300+ učenika' : `Do ${plan.maxStudents} učenika`}
                   </p>
 
                   {plan.custom ? (
-                    <p className="mt-5 text-5xl font-bold leading-none">Po dogovoru</p>
+                    <p className="mt-5 text-4xl font-bold leading-none">Po dogovoru</p>
                   ) : (
                     <div className="mt-5 flex items-end gap-2">
-                      <p className="text-5xl font-bold leading-none">{formatEUR(plan.perStudent ?? 0)}</p>
-                      <p className="pb-1 text-2xl font-medium text-muted">/ učenik</p>
+                      <p className="text-4xl font-bold leading-none">{formatEUR(plan.perStudent ?? 0)}</p>
+                      <p className="pb-1 text-xl font-medium text-muted">/ učenik</p>
                     </div>
                   )}
 
-                  <ul className="mt-7 min-h-[11.25rem] space-y-3">
+                  <ul className="mt-7 min-h-[9.5rem] space-y-3">
                     {highlights.map((item) => (
-                      <li key={`${plan.id}-${item}`} className="flex items-start gap-2 text-2xl text-muted">
-                        <Check size={18} className="mt-1 shrink-0 text-brand-700" />
+                      <li key={`${plan.id}-${item}`} className="flex items-start gap-2 text-xl text-muted">
+                        <Check size={16} className="mt-1 shrink-0 text-brand-700" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -122,7 +122,7 @@ export function Pricing() {
 
                   <Button
                     className={cn(
-                      'mt-auto w-full rounded-full py-3 text-2xl font-semibold',
+                      'mt-auto w-full rounded-full py-3 text-lg font-semibold',
                       plan.id === 'ENTERPRISE'
                         ? 'border-none shadow-none'
                         : 'border border-surface bg-card shadow-none hover:bg-soft',
