@@ -7,9 +7,16 @@ import { Container } from '../components/ui/Container';
 import { Input } from '../components/ui/Input';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { ToggleSwitch } from '../components/ui/ToggleSwitch';
-import { PRICING_BY_CYCLE, type BillingCycle } from '../data/pricing';
+import { PRICING_BY_CYCLE, type BillingCycle, type PlanId } from '../data/pricing';
 import { calcTotal, formatEUR, getPlanForStudents } from '../lib/pricing';
 import { cn } from '../lib/cn';
+
+const PLAN_SUBTITLES: Record<PlanId, string> = {
+  START: 'Za manje škole',
+  GROWTH: 'Za rastuće centre',
+  PRO: 'Za veće sisteme',
+  ENTERPRISE: 'Za napredne potrebe',
+};
 
 function scrollToContact(): void {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -71,7 +78,9 @@ export function Pricing() {
               rightLabel="Godišnja licenca (12 meseci)"
               ariaLabel="Promeni tip licence"
             />
-            <p className="text-sm text-muted">Ukupno = max(minimalna cena paketa, broj_učenika × cena_po_učeniku).</p>
+            <p className="text-sm text-muted">
+              Ukupno = veća vrednost između minimalne cene paketa i (broj učenika × cena po učeniku).
+            </p>
           </div>
         </Reveal>
 
@@ -87,12 +96,17 @@ export function Pricing() {
               <Reveal key={plan.id} delay={index * 0.04}>
                 <Card
                   className={cn(
-                    'h-full p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg',
+                    'flex h-full flex-col p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg',
                     plan.id === 'ENTERPRISE' && 'border-2 border-brand-500 bg-soft',
                   )}
                 >
                   <div className="flex items-center justify-between gap-3">
-                    <h3 className="text-lg font-semibold">{plan.name}</h3>
+                    <div>
+                      <h3 className="text-lg font-semibold">{plan.name}</h3>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                        {PLAN_SUBTITLES[plan.id]}
+                      </p>
+                    </div>
                     {plan.id === 'ENTERPRISE' ? (
                       <span className="rounded-full border border-brand-600 px-2 py-1 text-xs font-semibold text-brand-700">
                         Kontaktirajte nas
@@ -108,11 +122,11 @@ export function Pricing() {
                   </p>
                   <p className="mt-2 text-sm text-muted">Primer ukupne cene: {plan.exampleText}</p>
                   <Button
-                    className="mt-6 w-full"
+                    className="mt-auto w-full"
                     variant={plan.id === 'ENTERPRISE' ? 'secondary' : 'primary'}
                     onClick={scrollToContact}
                   >
-                    {plan.id === 'ENTERPRISE' ? 'Zatraži ponudu' : 'Zakaži demo'}
+                    {plan.id === 'ENTERPRISE' ? 'Zatražite ponudu' : 'Zakažite demo'}
                   </Button>
                 </Card>
               </Reveal>

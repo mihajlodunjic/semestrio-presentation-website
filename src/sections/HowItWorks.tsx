@@ -4,10 +4,10 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { cn } from '../lib/cn';
 
 const steps = [
-  'Škola dobija svoj prostor + schoolCode',
-  'Admin kreira kurseve -> grupe -> lekcije -> materijale',
-  'Učenik se registruje schoolCode-om i prijavi kurs (upis je PENDING)',
-  'Admin potvrdi uplatu -> upis postaje ACTIVE (u aktivnoj sezoni i do limita)',
+  'Vaša škola dobija nalog i pristupni kod škole',
+  'Administracija unosi kurseve → grupe → lekcije → materijale',
+  'Učenik se registruje uz pristupni kod i prijavi kurs (upis je na čekanju)',
+  'Administracija potvrdi uplatu → upis postaje aktivan (u važećoj školskoj godini i do limita)',
 ];
 
 export function HowItWorks() {

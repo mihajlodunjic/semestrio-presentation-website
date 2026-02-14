@@ -7,22 +7,22 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 
 const roleCards = [
   {
-    title: 'SUPER_ADMIN',
-    badge: 'Admin',
-    subtitle: 'Upravlja školama i licencama, vidi sve.',
-    rights: ['Upravljanje tenantima', 'Pregled svih licenci i sezona', 'Globalna kontrola pristupa'],
+    title: 'Vlasnik / direktor',
+    badge: 'Vlasnik',
+    subtitle: 'Uvid u upise, licence i ključna pravila rada škole.',
+    rights: ['Pregled upisa i pristupa', 'Uvid u licence i iskorišćenost paketa', 'Kontrola osnovnih pravila škole'],
   },
   {
-    title: 'SCHOOL_ADMIN',
-    badge: 'Admin',
-    subtitle: 'Kursevi/grupe/lekcije/materijali + odobravanje upisa.',
-    rights: ['Kreiranje kurseva i grupa', 'Odobravanje uplata i upisa', 'Objava lekcija i materijala'],
+    title: 'Administracija škole',
+    badge: 'Administracija',
+    subtitle: 'Kursevi, grupe, lekcije, materijali i aktiviranje upisa.',
+    rights: ['Kreiranje kurseva i grupa', 'Objava lekcija i materijala', 'Potvrda uplata i aktiviranje upisa'],
   },
   {
-    title: 'STUDENT',
-    badge: 'Student',
-    subtitle: 'Vidi svoje upise i sadržaj samo kad ima pravo pristupa.',
-    rights: ['Pregled aktivnih upisa', 'Pristup lekcijama po pravilima', 'Jasan status svakog kursa'],
+    title: 'Učenik',
+    badge: 'Učenik',
+    subtitle: 'Vidi svoje upise i materijale samo kada ima pravo pristupa.',
+    rights: ['Pregled svojih upisa i statusa', 'Pristup lekcijama po pravilima', 'Linkovi i materijali na jednom mestu'],
   },
 ];
 

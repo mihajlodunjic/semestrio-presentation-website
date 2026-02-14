@@ -5,17 +5,17 @@ import { Container } from '../components/ui/Container';
 import { SectionHeading } from '../components/ui/SectionHeading';
 
 const problems = [
-  'Upisi i uplate se prate ručno',
-  'Nejasno ko ima pravo na koje materijale',
-  'Sezone se mešaju, učenici traže pristup od prošle godine',
+  'Upisi i uplate se prate ručno kroz tabele i poruke',
+  'Nije jasno ko ima pravo pristupa materijalima',
+  'Mešaju se školske godine, pa se pristup traži "kao prošle godine"',
   'Materijali su rasuti po linkovima i folderima',
 ];
 
 const solutions = [
-  'Jasan tok upisa: PENDING -> ACTIVE',
-  'Pristup samo uz aktivan upis i efektivnu licencu',
+  'Jasan tok upisa: na čekanju → aktivno',
+  'Pristup materijalima samo uz aktivan upis i važeću licencu',
   'Materijali organizovani po lekcijama',
-  'Škola kao tenant: izolacija podataka',
+  'Podaci škole su odvojeni i sigurni',
 ];
 
 export function ProblemSolution() {

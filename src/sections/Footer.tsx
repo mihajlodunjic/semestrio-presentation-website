@@ -23,7 +23,7 @@ export function Footer({ onOpenLegal }: FooterProps) {
           <div className="lg:col-span-5">
             <BrandLogo />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted">
-              Semestrio je B2B SaaS platforma za organizaciju nastave, upisa i kontrole pristupa u školama i edukativnim centrima.
+              Semestrio je platforma u oblaku za organizaciju nastave, upisa i kontrole pristupa u školama i edukativnim centrima.
             </p>
           </div>
 

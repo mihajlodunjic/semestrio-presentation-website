@@ -25,33 +25,33 @@ const features = [
     icon: FileText,
   },
   {
-    title: 'Draft / Published lekcije',
-    description: 'Objavi tek kada je spremno, bez izlaska nepotpunog sadržaja.',
+    title: 'Nacrt / Objavljeno',
+    description: 'Objavite lekciju tek kada je spremna, bez izlaska nepotpunog sadržaja.',
     icon: Signal,
   },
   {
-    title: 'Live link bez integracija',
-    description: 'Dodaj Zoom, Meet ili Teams link direktno u lekciju.',
+    title: 'Online čas (link)',
+    description: 'Samo nalepite link za čas (Zoom/Meet/Teams) direktno u lekciju.',
     icon: Link2,
   },
   {
     title: 'Upisi sa statusima',
-    description: 'Jasni statusi PENDING/ACTIVE olakšavaju administraciju.',
+    description: 'Jasan status upisa: na čekanju / aktivan.',
     icon: Users,
   },
   {
-    title: 'Sezonske licence',
-    description: 'ACTIVE/SCHEDULED/PAUSED statusi drže poslovna pravila pod kontrolom.',
+    title: 'Licence po školskoj godini',
+    description: 'Licenca može biti aktivna, planirana ili pauzirana, uz jasna pravila.',
     icon: CalendarClock,
   },
   {
     title: 'Kontrola pristupa po pravilima',
-    description: 'Pristup je uslovljen aktivnim upisom i efektivnom sezonom.',
+    description: 'Pristup je vezan za aktivan upis i važeću licencu.',
     icon: Lock,
   },
   {
     title: 'Limit učenika po licenci',
-    description: 'Distinct brojanje učenika bez dupliranja po predmetima.',
+    description: 'Broji se jedinstveni broj učenika (svaki učenik se računa jednom).',
     icon: PlayCircle,
   },
 ];
@@ -63,8 +63,8 @@ export function Features() {
         <Reveal>
           <SectionHeading
             eyebrow="Funkcionalnosti"
-            title="Core funkcije fokusirane na operativnu stabilnost"
-            subtitle="MVP obuhvata najvažnije procese koji najviše opterećuju administraciju škole."
+            title="Ključne funkcije za uredno vođenje škole"
+            subtitle="Semestrio pokriva procese koji najviše opterećuju administraciju škole: upise, lekcije, materijale i pravila pristupa."
             align="center"
             className="mx-auto max-w-3xl"
           />
@@ -85,7 +85,7 @@ export function Features() {
         <Reveal delay={0.12}>
           <Card className="mt-8 border-brand-gray-200 bg-soft p-5 sm:p-6">
             <p className="text-sm text-muted sm:text-base">
-              MVP je fokusiran na jednostavnost: bez plaćanja u aplikaciji, bez notifikacija i bez chat-a - stabilno i jasno.
+              Semestrio je fokusiran na stabilno vođenje osnovnih procesa. Dodatne opcije (online plaćanje, notifikacije, chat) uvodimo po potrebi.
             </p>
           </Card>
         </Reveal>

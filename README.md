@@ -1,6 +1,6 @@
 ﻿# Semestrio Presentation Website
 
-Prezentacioni SPA sajt za B2B SaaS platformu **Semestrio**, napravljen sa React + Vite + TypeScript + TailwindCSS + Framer Motion.
+Prezentacioni SPA sajt za B2B platformu u oblaku **Semestrio**, napravljen sa React + Vite + TypeScript + TailwindCSS + Framer Motion.
 
 ## Pokretanje
 

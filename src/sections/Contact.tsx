@@ -47,7 +47,7 @@ export function Contact() {
   }, [showToast]);
 
   const benefits = useMemo(
-    () => ['Brži onboarding škole i admin tima', 'Jasna pravila pristupa i sezonalnosti', 'Odgovaramo u roku od 24h'],
+    () => ['Brži početak rada za vašu školu', 'Jasna pravila pristupa kroz školsku godinu', 'Javljamo se u najkraćem roku'],
     [],
   );
 
@@ -91,17 +91,17 @@ export function Contact() {
         <Reveal>
           <SectionHeading
             eyebrow="Kontakt"
-            title="Spremni za demo prilagođen vašoj školi?"
-            subtitle="Pošaljite nam osnovne informacije i vratićemo se sa predlogom sledećih koraka."
+            title="Želite demo prilagođen vašoj školi?"
+            subtitle="Pošaljite nam osnovne informacije i javićemo se sa predlogom sledećih koraka."
           />
         </Reveal>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
             <Card className="h-full p-6 sm:p-7">
-              <h3 className="text-2xl font-semibold">Razgovarajmo o vašem modelu rada</h3>
+              <h3 className="text-2xl font-semibold">Razgovarajmo o načinu rada vaše škole</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                Semestrio je dizajniran za škole i edukativne centre koji žele jasan i održiv proces od upisa do pristupa materijalima.
+                Semestrio pomaže školama da upise, uplate i pristup materijalima vode jednostavno i pregledno, kroz školsku godinu.
               </p>
               <ul className="mt-6 space-y-3">
                 {benefits.map((benefit) => (
@@ -125,7 +125,7 @@ export function Contact() {
             <Card className="relative p-6 sm:p-7">
               {showToast ? (
                 <div className="mb-5 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700 dark:border-emerald-900/40 dark:bg-emerald-950/30 dark:text-emerald-300">
-                  Hvala! Javićemo se uskoro.
+                  Hvala! Javićemo vam se uskoro.
                 </div>
               ) : null}
 
@@ -143,7 +143,7 @@ export function Contact() {
 
                 <Input
                   id="schoolName"
-                    label="Naziv škole / centra"
+                  label="Naziv škole / centra"
                   value={form.schoolName}
                   onChange={(event) => onChange('schoolName', event.target.value)}
                   required
@@ -186,7 +186,7 @@ export function Contact() {
                 {errors.message ? <p className="-mt-2 text-sm text-rose-600">{errors.message}</p> : null}
 
                 <Button type="submit" className="mt-2 w-full sm:w-auto">
-                  Pošalji upit
+                  Pošaljite upit
                 </Button>
               </form>
             </Card>

@@ -5,11 +5,11 @@ import { Container } from '../components/ui/Container';
 import { SectionHeading } from '../components/ui/SectionHeading';
 
 const bullets = [
-  'Sezona (licenca) je period rada škole (npr. 2025/26).',
-  'Učenik ima trajni nalog, ali svake godine pravi novi upis (enrollment).',
-  'Pristup sadržaju postoji samo uz ACTIVE upis i efektivnu licencu.',
-  'Aktivacija upisa je moguća samo kad je sezona aktivna i u okviru limita.',
-  'Pravila ostaju konzistentna i kada škola vodi više programa kroz godinu.',
+  'Licenca predstavlja jednu školsku godinu (npr. 2025/26).',
+  'Učenik ima trajan nalog, ali svake godine pravi novi upis.',
+  'Pristup sadržaju postoji samo uz aktivan upis i važeću licencu.',
+  'Aktiviranje upisa je moguće kada licenca počne da važi i u okviru limita paketa.',
+  'Rezultat je manje konfuzije i manje zahteva za pristup \"od prošle godine\".',
 ];
 
 export function SeasonModel() {
@@ -19,8 +19,8 @@ export function SeasonModel() {
         <Reveal>
           <SectionHeading
             eyebrow="Diferencijator"
-            title="Sezonske licence = red u poslovnoj logici"
-            subtitle="Platforma odvaja trajni identitet korisnika od sezonskog prava pristupa."
+            title="Licence po školskoj godini = red u poslovnoj logici"
+            subtitle="Jasna pravila pristupa kroz školske godine, bez mešanja generacija."
           />
         </Reveal>
 
@@ -41,9 +41,9 @@ export function SeasonModel() {
           <Reveal className="lg:col-span-4" delay={0.08}>
             <Card className="h-full border-brand-gray-200 bg-soft p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.1em] text-brand-700">Info panel</p>
-              <h3 className="mt-3 text-xl font-semibold">Nalog != Upis</h3>
+              <h3 className="mt-3 text-xl font-semibold">Nalog nije isto što i upis</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                Nalog je trajan identitet korisnika. Upis je sezonski zapis koji određuje pravo pristupa kursu i materijalima.
+                Nalog je trajan identitet učenika. Upis određuje pravo pristupa u konkretnoj školskoj godini.
               </p>
             </Card>
           </Reveal>

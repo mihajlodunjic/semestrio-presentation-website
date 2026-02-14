@@ -103,7 +103,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
 
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-          <Button onClick={handleDemo}>Zakaži demo</Button>
+          <Button onClick={handleDemo}>Zakažite demo</Button>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
@@ -136,7 +136,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
             ))}
           </nav>
           <Button className="mt-3 w-full" onClick={handleDemo}>
-            Zakaži demo
+            Zakažite demo
           </Button>
         </div>
       </Container>
