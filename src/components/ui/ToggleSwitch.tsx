@@ -6,28 +6,52 @@ interface ToggleSwitchProps {
   leftLabel: string;
   rightLabel: string;
   ariaLabel: string;
+  className?: string;
 }
 
-export function ToggleSwitch({ checked, onChange, leftLabel, rightLabel, ariaLabel }: ToggleSwitchProps) {
+export function ToggleSwitch({
+  checked,
+  onChange,
+  leftLabel,
+  rightLabel,
+  ariaLabel,
+  className,
+}: ToggleSwitchProps) {
   return (
-    <div className="inline-flex items-center gap-3 rounded-full border border-surface bg-soft p-1">
-      <span className={cn('px-3 text-sm font-medium', !checked ? 'text-primary' : 'text-muted')}>{leftLabel}</span>
+    <div
+      className={cn(
+        'inline-flex w-full max-w-[420px] items-center rounded-full border border-surface bg-soft p-1',
+        className,
+      )}
+      role="group"
+      aria-label={ariaLabel}
+    >
       <button
         type="button"
-        role="switch"
-        aria-checked={checked}
-        aria-label={ariaLabel}
-        onClick={() => onChange(!checked)}
-        className="relative h-7 w-12 overflow-hidden rounded-full bg-brand-600 transition-colors"
+        onClick={() => onChange(false)}
+        className={cn(
+          'flex-1 rounded-full px-4 py-2 text-base font-semibold transition-all duration-200',
+          !checked
+            ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-[#111111] shadow-sm'
+            : 'text-muted hover:text-primary',
+        )}
+        aria-pressed={!checked}
       >
-        <span
-          className={cn(
-            'absolute left-0.5 top-0.5 h-6 w-6 rounded-full bg-white shadow transition-transform',
-            checked ? 'translate-x-5' : 'translate-x-0',
-          )}
-        />
+        {leftLabel}
       </button>
-      <span className={cn('px-3 text-sm font-medium', checked ? 'text-primary' : 'text-muted')}>{rightLabel}</span>
+      <button
+        type="button"
+        onClick={() => onChange(true)}
+        className={cn(
+          'flex-1 rounded-full px-4 py-2 text-base font-semibold transition-all duration-200',
+          checked
+            ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-[#111111] shadow-sm'
+            : 'text-muted hover:text-primary',
+        )}
+        aria-pressed={checked}
+      >
+        {rightLabel}
+      </button>
     </div>
   );
 }

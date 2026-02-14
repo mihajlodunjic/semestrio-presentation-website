@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { RibbonBackground } from '../components/RibbonBackground';
 import { Reveal } from '../components/motion/Reveal';
@@ -7,16 +8,9 @@ import { Container } from '../components/ui/Container';
 import { Input } from '../components/ui/Input';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { ToggleSwitch } from '../components/ui/ToggleSwitch';
-import { PRICING_BY_CYCLE, type BillingCycle, type PlanId } from '../data/pricing';
+import { PRICING_BY_CYCLE, type BillingCycle } from '../data/pricing';
 import { calcTotal, formatEUR, getPlanForStudents } from '../lib/pricing';
 import { cn } from '../lib/cn';
-
-const PLAN_SUBTITLES: Record<PlanId, string> = {
-  START: 'Za manje škole',
-  GROWTH: 'Za rastuće centre',
-  PRO: 'Za veće sisteme',
-  ENTERPRISE: 'Za napredne potrebe',
-};
 
 function scrollToContact(): void {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -70,63 +64,73 @@ export function Pricing() {
         </Reveal>
 
         <Reveal className="mt-8" delay={0.05}>
-          <div className="flex flex-col gap-4 rounded-2xl border border-surface bg-card p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+          <div className="flex flex-col items-center gap-3">
             <ToggleSwitch
               checked={isAnnual}
               onChange={(checked) => setCycle(checked ? 'ANNUAL_12M' : 'SEASONAL_5M')}
-              leftLabel="Sezonska licenca (5 meseci)"
-              rightLabel="Godišnja licenca (12 meseci)"
-              ariaLabel="Promeni tip licence"
+              leftLabel="Sezonska (5 mes.)"
+              rightLabel="Godišnja (12 mes.)"
+              ariaLabel="Promenite tip licence"
             />
-            <p className="text-sm text-muted">
-              Ukupno = veća vrednost između minimalne cene paketa i (broj učenika × cena po učeniku).
+            <p className="text-center text-sm text-muted">
+              Ukupno = max(minimalna cena paketa, broj_učenika × cena_po_učeniku).
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {plans.map((plan, index) => {
-            const cardPrice = plan.custom
-              ? 'Po dogovoru'
-              : isAnnual
-                ? `${formatEUR(plan.perStudent ?? 0)} po učeniku godišnje`
-                : `${formatEUR(plan.perStudent ?? 0)} po učeniku / 5 meseci`;
+            const highlights = plan.custom
+              ? ['Svi moduli uključeni', 'Email podrška']
+              : [
+                  `Min. cena: ${formatEUR(plan.minPrice ?? 0)}`,
+                  `Primer: ${plan.exampleText.replace('->', '→')}`,
+                  'Svi moduli uključeni',
+                  'Email podrška',
+                ];
 
             return (
-              <Reveal key={plan.id} delay={index * 0.04}>
+              <Reveal key={plan.id} delay={index * 0.04} className="h-full">
                 <Card
                   className={cn(
-                    'flex h-full flex-col p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg',
-                    plan.id === 'ENTERPRISE' && 'border-2 border-brand-500 bg-soft',
+                    'flex h-full flex-col rounded-3xl border bg-card p-6 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg',
+                    plan.id === 'ENTERPRISE' ? 'border-brand-500' : 'border-surface',
                   )}
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <h3 className="text-lg font-semibold">{plan.name}</h3>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted">
-                        {PLAN_SUBTITLES[plan.id]}
-                      </p>
+                  <h3 className="text-3xl font-bold tracking-tight">{plan.name}</h3>
+                  <p className="mt-3 text-2xl text-muted">
+                    {plan.maxStudents === null ? '300+ učenika' : `Do ${plan.maxStudents} učenika`}
+                  </p>
+
+                  {plan.custom ? (
+                    <p className="mt-5 text-5xl font-bold leading-none">Po dogovoru</p>
+                  ) : (
+                    <div className="mt-5 flex items-end gap-2">
+                      <p className="text-5xl font-bold leading-none">{formatEUR(plan.perStudent ?? 0)}</p>
+                      <p className="pb-1 text-2xl font-medium text-muted">/ učenik</p>
                     </div>
-                    {plan.id === 'ENTERPRISE' ? (
-                      <span className="rounded-full border border-brand-600 px-2 py-1 text-xs font-semibold text-brand-700">
-                        Kontaktirajte nas
-                      </span>
-                    ) : null}
-                  </div>
-                  <p className="mt-3 text-sm text-muted">
-                    {plan.maxStudents === null ? 'Preko 300 učenika' : `Do ${plan.maxStudents} učenika`}
-                  </p>
-                  <p className="mt-4 text-sm font-semibold text-primary">{cardPrice}</p>
-                  <p className="mt-2 text-sm text-muted">
-                    Minimalna cena: {plan.minPrice === null ? 'Po dogovoru' : formatEUR(plan.minPrice)}
-                  </p>
-                  <p className="mt-2 text-sm text-muted">Primer ukupne cene: {plan.exampleText}</p>
+                  )}
+
+                  <ul className="mt-7 min-h-[11.25rem] space-y-3">
+                    {highlights.map((item) => (
+                      <li key={`${plan.id}-${item}`} className="flex items-start gap-2 text-2xl text-muted">
+                        <Check size={18} className="mt-1 shrink-0 text-brand-700" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
                   <Button
-                    className="mt-auto w-full"
-                    variant={plan.id === 'ENTERPRISE' ? 'secondary' : 'primary'}
+                    className={cn(
+                      'mt-auto w-full rounded-full py-3 text-2xl font-semibold',
+                      plan.id === 'ENTERPRISE'
+                        ? 'border-none shadow-none'
+                        : 'border border-surface bg-card shadow-none hover:bg-soft',
+                    )}
+                    variant={plan.id === 'ENTERPRISE' ? 'primary' : 'secondary'}
                     onClick={scrollToContact}
                   >
-                    {plan.id === 'ENTERPRISE' ? 'Zatražite ponudu' : 'Zakažite demo'}
+                    {plan.id === 'ENTERPRISE' ? 'Kontaktirajte nas' : 'Zatražite ponudu'}
                   </Button>
                 </Card>
               </Reveal>
@@ -169,7 +173,8 @@ export function Pricing() {
                   ) : (
                     <>
                       <p>
-                        {parsedStudents} x {formatEUR(recommendedPlan.perStudent ?? 0)} = {formatEUR(breakdown.perStudentTotal ?? 0)}
+                        {parsedStudents} x {formatEUR(recommendedPlan.perStudent ?? 0)} ={' '}
+                        {formatEUR(breakdown.perStudentTotal ?? 0)}
                       </p>
                       <p>minimalna cena = {formatEUR(breakdown.minPrice ?? 0)}</p>
                       <p className="font-semibold text-primary">ukupno = {formatEUR(breakdown.total ?? 0)}</p>
