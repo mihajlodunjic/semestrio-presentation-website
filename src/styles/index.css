@@ -1,0 +1,78 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  section {
+    scroll-margin-top: 6rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    outline: none;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--brand-yellow-500);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .bg-surface {
+    background-color: var(--bg);
+  }
+
+  .bg-soft {
+    background-color: var(--bg-soft);
+  }
+
+  .bg-card {
+    background-color: var(--card);
+  }
+
+  .text-primary {
+    color: var(--text);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  .border-surface {
+    border-color: var(--border);
+  }
+
+  .ring-brand {
+    --tw-ring-color: var(--brand-yellow-500);
+  }
+}
